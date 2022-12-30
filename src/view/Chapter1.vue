@@ -59,6 +59,7 @@ onUnmounted(() => {
     text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.8);
     position: relative;
     
+    
     &::after {
       content: '';
       position: absolute;
@@ -74,6 +75,7 @@ onUnmounted(() => {
       right: 64px;
       bottom: 64px;
       z-index: 1;
+      cursor: pointer;
     }
 
   }

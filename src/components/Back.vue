@@ -27,6 +27,7 @@ function backLastPage() {
     top: 64px;
     color: white;
     z-index: 1;
+    cursor: pointer;
 
     &__arrow {
       width: 24px;

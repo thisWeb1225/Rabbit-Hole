@@ -72,6 +72,7 @@ onUnmounted(() => {
       right: 64px;
       bottom: 64px;
       z-index: 1;
+      cursor: pointer;
     }
   }
 </style>
