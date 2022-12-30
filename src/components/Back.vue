@@ -5,7 +5,7 @@
       <span class="arrow2 line"></span>
       <span class="arrow3 line"></span>
     </div>
-    <p class="back__text">BACK</p>
+    <p class="back__text">回上頁</p>
   </div>
 </template>
 

@@ -1,5 +1,6 @@
 <template>
 <div>
+  <Back></Back>
   <section class="chapter1">
     <h1 class="chapter1__title" @click.self="toChapter2">
       想成
@@ -58,7 +59,6 @@ onUnmounted(() => {
     color: white;
     text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.8);
     position: relative;
-    
     
     &::after {
       content: '';
