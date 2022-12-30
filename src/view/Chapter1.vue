@@ -13,11 +13,11 @@
 import { ref } from 'vue';
 import { onMounted, onUnmounted } from '@vue/runtime-core';
 import { useRouter } from 'vue-router';
-import chapter1Audio from '@/assets/chapter1.wav'
+import track1Audio from '@/assets/track1.mp3'
 
 const router = useRouter();
 
-const audio = new Audio(chapter1Audio)
+const audio = new Audio(track1Audio)
 
 let canNextChapter = ref(false);
 
@@ -56,7 +56,7 @@ onUnmounted(() => {
     background-repeat: no-repeat;
     background-position: center;
     color: white;
-    text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.9);
+    text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.8);
     position: relative;
     
     &::after {
@@ -64,15 +64,15 @@ onUnmounted(() => {
       position: absolute;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.397);
+      background: rgba(0, 0, 0, 0.4);
     }
 
     &__title {
       font-weight: normal;
       font-size: 2.3rem;
       position: absolute;
-      right: 15vw;
-      bottom: 6vh;
+      right: 64px;
+      bottom: 64px;
       z-index: 1;
     }
 

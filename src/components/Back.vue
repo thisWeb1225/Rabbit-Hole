@@ -23,8 +23,8 @@ function backLastPage() {
   .back {
     display: flex;
     position: absolute;
-    left: 20px;
-    top: 20px;
+    left: 64px;
+    top: 64px;
     color: white;
     z-index: 1;
 
@@ -59,7 +59,7 @@ function backLastPage() {
     &__text {
       padding-left: 2px;
       text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.9);
-      font-size: 0.8rem;
+      font-size: 0.9rem;
     }
   }
 </style>

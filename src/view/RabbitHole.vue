@@ -24,9 +24,9 @@
 
 <script setup>
 import MusicCard from '@/components/MusicCard.vue'
-import music1 from '@/assets/ch1.mp3';
-import music2 from '@/assets/ch1+ch2.mp3';
-import music3 from '@/assets/ch3.mp3';
+import music1 from '@/assets/track1.mp3';
+import music2 from '@/assets/track2.mp3';
+import music3 from '@/assets/track3.mp3';
 import { ref } from 'vue';
 
 let track1 = new Audio(music1);

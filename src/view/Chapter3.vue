@@ -1,9 +1,7 @@
 <template>
 <div>
   <Back></Back>
-  <section class="chapter3">
-
-  </section>
+  <section class="chapter3"></section>
 </div>
 
 </template>
@@ -12,20 +10,15 @@
 import { ref } from 'vue';
 import Back from '@/components/Back.vue';
 import { useRouter } from 'vue-router';
-import chapter3Audio from '@/assets/chapter3.mp3'
+import track3Audio from '@/assets/track3.mp3'
 import { onMounted, onUnmounted } from '@vue/runtime-core';
 
 const router = useRouter();
 
-let canNextChapter = ref(false);
-
-const audio = new Audio(chapter3Audio);
+const audio = new Audio(track3Audio);
 
 function toRefer() {
   router.push('/Refer')
-}
-function allowNextChapter() {
-  canNextChapter.value = true;
 }
 function audioInit() {
   audio.currentTime = 0;
@@ -34,11 +27,14 @@ function audioInit() {
 
 onMounted(() => {
   audioInit();
-  setTimeout(allowNextChapter,10000)
 })
 
 onUnmounted(() => {
   audio.pause();
+})
+
+audio.addEventListener('ended',() => {
+  toRefer()
 })
 </script>
 

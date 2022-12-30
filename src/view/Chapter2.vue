@@ -14,14 +14,14 @@
 import { ref } from 'vue';
 import Back from '@/components/Back.vue';
 import { useRouter } from 'vue-router';
-import chapter2Audio from '@/assets/chapter2.wav'
+import track2Audio from '@/assets/track2.mp3'
 import { onMounted, onUnmounted } from '@vue/runtime-core';
 
 const router = useRouter();
 
 let canNextChapter = ref(false);
 
-const audio = new Audio(chapter2Audio);
+const audio = new Audio(track2Audio);
 
 function toChapter3() {
   if(canNextChapter.value) {
@@ -69,8 +69,8 @@ onUnmounted(() => {
       font-weight: normal;
       font-size: 2.3rem;
       position: absolute;
-      right: 15vw;
-      bottom: 6vh;
+      right: 64px;
+      bottom: 64px;
       z-index: 1;
     }
   }
