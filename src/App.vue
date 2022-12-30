@@ -26,7 +26,6 @@ html {
 .container {
   height: 100vh;
   background: black;
-  overflow: hidden;
 }
 
 .fade-enter-active {

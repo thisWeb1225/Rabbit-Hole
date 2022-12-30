@@ -6,22 +6,29 @@
       真
     </h1>
   </section>
+  <ToMenu></ToMenu>
+  <Page></Page>
+  <MusicIndicator :isPlaying="isPlaying"></MusicIndicator>
 </div>
 
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import Back from '@/components/Back.vue';
-import { useRouter } from 'vue-router';
-import track2Audio from '@/assets/track2.mp3'
 import { onMounted, onUnmounted } from '@vue/runtime-core';
+import { useRouter } from 'vue-router';
+import Back from '@/components/Back.vue';
+import ToMenu from '@/components/ToMenu.vue'
+import Page from '@/components/Page.vue'
+import MusicIndicator from '@/components/MusicIndicator.vue'
+import track2Audio from '@/assets/track2.mp3';
 
 const router = useRouter();
 
-let canNextChapter = ref(false);
-
 const audio = new Audio(track2Audio);
+
+let canNextChapter = ref(false);
+let isPlaying = ref(false);
 
 function toChapter3() {
   if(canNextChapter.value) {
@@ -30,11 +37,20 @@ function toChapter3() {
 }
 function allowNextChapter() {
   canNextChapter.value = true;
-  console.log('can jump')
 }
 function audioInit() {
   audio.currentTime = 0;
   audio.play();
+  if (audio.paused) {
+    isPlaying.value = false;
+  }
+  else {
+    isPlaying.value = true;
+  }
+}
+function audioEnd() {
+  audio.pause();
+  isPlaying.value = false;
 }
 
 onMounted(() => {
@@ -43,7 +59,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  audio.pause();
+  audioEnd();
 })
 </script>
 
@@ -55,7 +71,7 @@ onUnmounted(() => {
     background-repeat: no-repeat;
     background-position: center;
     color: white;
-    text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.9);
+    text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.7);
     position: relative;
 
     &::after {

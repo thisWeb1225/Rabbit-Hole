@@ -30,7 +30,7 @@ function toChapter1() {
     display: grid;
     place-content: center;
     text-align: center;
-    text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.9);
+    text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.7);
     position: relative;
 
     &::after {

@@ -10,12 +10,23 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
 const router = useRouter();
+const route = useRoute()
 
 function backLastPage() {
-  router.back()
+  switch (route.path) {
+    case '/chapter1': 
+      router.push('/');
+      break;
+    case '/chapter2': 
+      router.push('/chapter1');
+      break;
+    case '/chapter3': 
+      router.push('/chapter2');
+      break;
+  }
 }
 </script>
 
@@ -24,7 +35,7 @@ function backLastPage() {
     display: flex;
     position: absolute;
     left: 64px;
-    top: 64px;
+    top: 44px;
     color: white;
     z-index: 1;
     cursor: pointer;
@@ -60,7 +71,7 @@ function backLastPage() {
     &__text {
       padding-left: 2px;
       text-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.9);
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
   }
 </style>
